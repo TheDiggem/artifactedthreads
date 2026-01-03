@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifacted Threads | EEG & Neurodiagnostic Apparel</title>
+  <meta name="description" content="Artifacted Threads — apparel for EEG techs, neurodiagnostic professionals, and signal-readers. Shop directly on Amazon." />
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #0f1622;
+      --panel2: #0c1320;
+      --text: #e7eefc;
+      --muted: #a8b6d6;
+      --line: rgba(231,238,252,.10);
+      --accent: #66e3ff;
+      --accent2: #9b7bff;
+      --good: #38f2a5;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(155,123,255,.18), transparent 60%),
+        radial-gradient(800px 450px at 85% 5%, rgba(102,227,255,.14), transparent 55%),
+        linear-gradient(180deg, #070a0f, var(--bg) 20%, #070a0f 100%);
+      color:var(--text);
+      line-height:1.45;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(12px);
+      background: rgba(11,15,20,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar .inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px;
+      border-radius:12px;
+      background:
+        radial-gradient(10px 10px at 30% 35%, rgba(255,255,255,.45), transparent 65%),
+        linear-gradient(135deg, rgba(102,227,255,.9), rgba(155,123,255,.9));
+      box-shadow: 0 8px 22px rgba(102,227,255,.12);
+    }
+    nav{
+      display:flex; align-items:center; gap:16px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+    nav a{ padding:8px 10px; border-radius:12px; }
+    nav a:hover{ background: rgba(231,238,252,.06); color:var(--text); }
+
+    /* Hero */
+    .hero{
+      padding:54px 0 26px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .heroCard{
+      background: linear-gradient(180deg, rgba(15,22,34,.9), rgba(12,19,32,.9));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      overflow:hidden;
+      position:relative;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute; inset:-80px -120px auto auto;
+      width:260px; height:260px;
+      background: radial-gradient(circle at 30% 30%, rgba(102,227,255,.30), transparent 60%);
+      transform: rotate(18deg);
+      filter: blur(0px);
+      pointer-events:none;
+    }
+    .kicker{
+      display:inline-flex;
+      gap:8px; align-items:center;
+      font-size:13px; font-weight:700;
+      color:rgba(231,238,252,.9);
+      background: rgba(231,238,252,.06);
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius: 999px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(102,227,255,.12);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 3.6vw, 44px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:16px;
+      max-width: 56ch;
+      margin:0 0 18px;
+    }
+    .ctaRow{
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      font-weight:800;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(102,227,255,.18), rgba(155,123,255,.18));
+      border-color: rgba(102,227,255,.35);
+    }
+    .btnPrimary:hover{
+      background: linear-gradient(135deg, rgba(102,227,255,.25), rgba(155,123,255,.23));
+    }
+    .btnGhost{
+      background: rgba(231,238,252,.04);
+    }
+    .heroSide{
+      display:grid;
+      gap:12px;
+    }
+    .mini{
+      background: rgba(15,22,34,.72);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+    }
+    .mini h3{
+      margin:0 0 6px;
+      font-size:14px;
+      letter-spacing:.2px;
+    }
+    .mini p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Section */
+    section{ padding:26px 0; }
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+      margin-bottom:14px;
+    }
+    .sectionHead h2{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+    .sectionHead .hint{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Product grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      background: rgba(15,22,34,.72);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+      display:flex;
+      flex-direction:column;
+      min-height: 100%;
+    }
+    .imgWrap{
+      aspect-ratio: 4 / 3;
+      background:
+        radial-gradient(600px 220px at 25% 20%, rgba(102,227,255,.14), transparent 55%),
+        radial-gradient(500px 200px at 80% 20%, rgba(155,123,255,.12), transparent 55%),
+        rgba(231,238,252,.03);
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px;
+    }
+    .imgWrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius: 14px;
+      border:1px solid rgba(231,238,252,.08);
+    }
+    .content{
+      padding:14px 14px 12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .titleRow{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    }
+    .title{
+      font-weight:900;
+      letter-spacing:-.2px;
+      margin:0;
+      font-size:15px;
+      line-height:1.25;
+    }
+    .tag{
+      font-size:12px;
+      font-weight:800;
+      color: rgba(231,238,252,.9);
+      border:1px solid rgba(231,238,252,.10);
+      background: rgba(231,238,252,.05);
+      padding:6px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+    .desc{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      flex:1;
+    }
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:2px;
+    }
+    .buy{
+      flex:1;
+      background: linear-gradient(135deg, rgba(56,242,165,.18), rgba(102,227,255,.12));
+      border-color: rgba(56,242,165,.35);
+    }
+    .buy:hover{
+      background: linear-gradient(135deg, rgba(56,242,165,.26), rgba(102,227,255,.17));
+    }
+    .view{
+      background: rgba(231,238,252,.04);
+      flex:1;
+    }
+
+    /* About / Footer */
+    .about{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .panel{
+      background: rgba(15,22,34,.72);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.20);
+    }
+    .panel h3{ margin:0 0 8px; font-size:15px; }
+    .panel p{ margin:0; color:var(--muted); font-size:13px; }
+    .panel ul{
+      margin:10px 0 0;
+      padding-left: 18px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    footer{
+      padding:26px 0 40px;
+      color:rgba(168,182,214,.85);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      margin-top:24px;
+    }
+    .footRow{
+      display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .smallLinks a{
+      color:rgba(168,182,214,.9);
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    .smallLinks a:hover{ background: rgba(231,238,252,.06); color:var(--text); }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .about{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px){
+      .grid{ grid-template-columns: 1fr; }
+      nav{ display:none; }
+      .hero{ padding-top:34px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="wrap inner">
+      <a class="brand" href="#top">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Artifacted Threads</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="heroGrid">
+        <div class="heroCard">
+          <span class="kicker"><span class="dot" aria-hidden="true"></span> EEG / Neurodiagnostic Apparel</span>
+          <h1>Wear the Signal.</h1>
+          <p class="sub">
+            Clean, technical designs for EEG techs, students, and neuro people who actually read the waves.
+            Every product links straight to Amazon for easy checkout.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" href="#shop">Shop Designs ↓</a>
+            <!-- OPTIONAL: add your Amazon storefront link here -->
+            <a class="btn btnGhost" href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon Storefront →</a>
+          </div>
+        </div>
+
+        <div class="heroSide">
+          <div class="mini">
+            <h3>Fast Checkout</h3>
+            <p>“Buy” buttons go directly to your Amazon listings.</p>
+          </div>
+          <div class="mini">
+            <h3>Built for Mobile</h3>
+            <p>Cards and buttons resize cleanly on phones.</p>
+          </div>
+          <div class="mini">
+            <h3>Easy Updates</h3>
+            <p>Swap images + paste new Amazon links—done.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop">
+      <div class="sectionHead">
+        <h2>Shop Designs</h2>
+        <p class="hint">Replace images + links with your real Amazon listings.</p>
+      </div>
+
+      <div class="grid">
+        <!-- PRODUCT CARD 1 -->
+        <article class="card">
+          <div class="imgWrap">
+            <!-- Put your image in /images/ and update src -->
+            <img src="images/shirt-01.jpg" alt="10–20 Is the Language - shirt mockup" />
+          </div>
+          <div class="content">
+            <div class="titleRow">
+              <h3 class="title">10–20 Is the Language</h3>
+              <span class="tag">Best Seller</span>
+            </div>
+            <p class="desc">Minimalist EEG tribute design for techs, students, and signal readers.</p>
+            <div class="actions">
+              <a class="btn buy" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              <a class="btn view" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT CARD 2 -->
+        <article class="card">
+          <div class="imgWrap">
+            <img src="images/shirt-02.jpg" alt="Artifacted Threads - shirt mockup" />
+          </div>
+          <div class="content">
+            <div class="titleRow">
+              <h3 class="title">Artifacted Threads Classic</h3>
+              <span class="tag">New</span>
+            </div>
+            <p class="desc">Clean brand-forward look. Great everyday wear in the lab or off shift.</p>
+            <div class="actions">
+              <a class="btn buy" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              <a class="btn view" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT CARD 3 -->
+        <article class="card">
+          <div class="imgWrap">
+            <img src="images/shirt-03.jpg" alt="EEG waveform design - shirt mockup" />
+          </div>
+          <div class="content">
+            <div class="titleRow">
+              <h3 class="title">Know Your Montages</h3>
+              <span class="tag">Staff Pick</span>
+            </div>
+            <p class="desc">For the ones who can spot artifact, seizure, and sleep staging at a glance.</p>
+            <div class="actions">
+              <a class="btn buy" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              <a class="btn view" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT CARD 4 -->
+        <article class="card">
+          <div class="imgWrap">
+            <img src="images/shirt-04.jpg" alt="Minimal medical cross EEG - shirt mockup" />
+          </div>
+          <div class="content">
+            <div class="titleRow">
+              <h3 class="title">Signal Over Noise</h3>
+              <span class="tag">Clean</span>
+            </div>
+            <p class="desc">Minimal design for anyone who lives in filters, impedance, and clean leads.</p>
+            <div class="actions">
+              <a class="btn buy" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              <a class="btn view" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT CARD 5 -->
+        <article class="card">
+          <div class="imgWrap">
+            <img src="images/shirt-05.jpg" alt="Sleep / EEG tech design - shirt mockup" />
+          </div>
+          <div class="content">
+            <div class="titleRow">
+              <h3 class="title">Sleep + Spikes</h3>
+              <span class="tag">Night Shift</span>
+            </div>
+            <p class="desc">A nod to the overnight crew keeping the data clean and the patients safe.</p>
+            <div class="actions">
+              <a class="btn buy" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              <a class="btn view" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCT CARD 6 -->
+        <article class="card">
+          <div class="imgWrap">
+            <img src="images/shirt-06.jpg" alt="EEG tech humor design - shirt mockup" />
+          </div>
+          <div class="content">
+            <div class="titleRow">
+              <h3 class="title">Artifact Happens</h3>
+              <span class="tag">Funny</span>
+            </div>
+            <p class="desc">Light humor for the people who’ve battled pop, sweat, and loose leads.</p>
+            <div class="actions">
+              <a class="btn buy" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              <a class="btn view" href="PASTE_AMAZON_LINK_HERE" target="_blank" rel="noopener noreferrer">View</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="sectionHead">
+        <h2>About Artifacted Threads</h2>
+        <p class="hint">Built for neuro people. Designed for everyday wear.</p>
+      </div>
+
+      <div class="about">
+        <div class="panel">
+          <h3>What you’ll find here</h3>
+          <p>
+            Apparel inspired by EEG fundamentals: 10–20 placement, montages, waveforms, clean acquisition,
+            and the culture of neurodiagnostics.
+          </p>
+          <ul>
+            <li>Professional designs (minimal, technical, clean)</li>
+            <li>Direct Amazon checkout for simplicity</li>
+            <li>Mobile-friendly browsing</li>
+          </ul>
+        </div>
+
+        <div class="panel" id="contact">
+          <h3>Contact</h3>
+          <p>
+            Add your email, Instagram, or Linktree here.
+          </p>
+          <ul>
+            <li>Email: <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></li>
+            <li>Instagram: <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener noreferrer">@YOUR_HANDLE</a></li>
+            <li>Linktree: <a href="https://linktr.ee/YOUR_LINK" target="_blank" rel="noopener noreferrer">YOUR_LINK</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrap footRow">
+        <div>© <span id="year"></span> Artifacted Threads. All rights reserved.</div>
+        <div class="smallLinks">
+          <a href="#shop">Shop</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
